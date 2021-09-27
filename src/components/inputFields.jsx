@@ -27,13 +27,13 @@ const InputFields = ({prihodi, setPrihodi, rashodi, setRashodi}) => {
 
 
             {/* Input za opis */}
-        <input className="add-description" value={text} onChange={(e)=>{      
+        <input className="add-description" value={text} placeholder="Opis..." onChange={(e)=>{      
             setTxt(e.target.value)       
         }}/>
 
 
             {/* Input za iznos */}
-        <input type="number" className="add-value" value={numValue} onChange={
+        <input type="number" className="add-value" placeholder="Iznos..." value={numValue} onChange={
             (e)=>{    
             setNumValue(e.target.value)    
         }}/>
