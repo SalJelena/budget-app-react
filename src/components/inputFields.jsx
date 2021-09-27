@@ -45,6 +45,7 @@ const InputFields = ({prihodi, setPrihodi, rashodi, setRashodi}) => {
             if(select === '+' && text !== ''){
 
             let noviPrihod = {
+                //mora Math.max
                 id:Math.max(0,...prihodi.map(p => p.id)) + 1,
                 desc: text,
                 value: Number(numValue)
@@ -53,6 +54,8 @@ const InputFields = ({prihodi, setPrihodi, rashodi, setRashodi}) => {
             setPrihodi([...prihodi, noviPrihod])
             setTxt('')
             setNumValue('')
+
+            console.log(prihodi);
         }
             if(select === '-' && text !== ''){
             let noviRashod = {
