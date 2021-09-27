@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { React, useState } from "react";
+import InputFields from "./components/inputFields.jsx";
+import Header from "./components/header.jsx"
+import CalculationsLists from "./components/calculations.jsx";
+import './App.css'
 
-function App() {
+
+const App = () => {
+
+  const [prihodi, setPrihodi] = useState([
+    {
+      id: 1,
+      desc: 'Plata',
+      value: 80000
+    }
+  ])
+
+ const [rashodi, setRashodi] = useState([
+    {
+      id: 1,
+      desc: 'Racuni',
+      value: 6000
+    }
+  ])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Header prihodi={prihodi} rashodi={rashodi} />
+
+      <InputFields prihodi={prihodi} setPrihodi={setPrihodi} rashodi={rashodi} setRashodi={setRashodi}/>
+
+      <CalculationsLists prihodi={prihodi} setPrihodi={setPrihodi} rashodi={rashodi} setRashodi={setRashodi} />
+    </>
+  )
+
+
+
 }
 
 export default App;
