@@ -2,14 +2,12 @@ import { React } from "react";
 import '../App.css'
 
 const Header = ({prihodi, rashodi}) => {
-
     
     let ukupniPrihod = prihodi.reduce(((sum, prihod) => sum + prihod.value), 0)
     let ukupniRashod = rashodi.reduce(((sum, rashod) => sum + rashod.value), 0)
     let preostaliBudzet = ukupniPrihod - ukupniRashod
 
     let ukupnoProcentiRashod = Math.round((ukupniRashod / ukupniPrihod) * 100)
-
 
     return (
         <div className="top-div">
@@ -21,10 +19,6 @@ const Header = ({prihodi, rashodi}) => {
             </div>
         </div>
     )
-
-
 }
 
 export default Header
-
-

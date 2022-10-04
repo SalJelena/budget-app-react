@@ -16,73 +16,50 @@ const InputFields = ({prihodi, setPrihodi, rashodi, setRashodi}) => {
         <div className="add">
            <div className="add-container">
             {/* Select opcija */}
-        <select className="add-type" value={select} onChange={(e)=>{
-            setSelect(e.target.value)
-        }}>
+                <select className="add-type" value={select} onChange={(e)=>{
+                    setSelect(e.target.value)
+                    }}>
+                    {options.map(option => <option key={option} value={option}>{option}</option>)}
+                </select>
 
-        {options.map(option => <option key={option} value={option}>{option}</option>)}
-         
+				<input className="add-description" value={text} placeholder="Opis..." onChange={(e)=>{      
+					setTxt(e.target.value)       
+				}}/>
 
-        </select>
+				<input type="number" className="add-value" placeholder="Iznos..." value={numValue} onChange={
+					(e)=>{    
+					setNumValue(e.target.value)    
+				}}/>
 
+				<button className="add-btn" onClick={() => {
+					if(select === '+' && text !== ''){
+					let noviPrihod = {
+						//mora Math.max
+						id:Math.max(0,...prihodi.map(p => p.id)) + 1,
+						desc: text,
+						value: Number(numValue)
+					}
 
-            {/* Input za opis */}
-        <input className="add-description" value={text} placeholder="Opis..." onChange={(e)=>{      
-            setTxt(e.target.value)       
-        }}/>
+					setPrihodi([...prihodi, noviPrihod])
+					setTxt('')
+					setNumValue('')
+				}
 
+					if(select === '-' && text !== ''){
+					let noviRashod = {
+						id:Math.max(0,...rashodi.map(r => r.id)) + 1,
+						desc: text,
+						value: Number(numValue)
+					}
+					setRashodi([...rashodi, noviRashod])
+					setTxt('')
+					setNumValue('')
+				}
 
-            {/* Input za iznos */}
-        <input type="number" className="add-value" placeholder="Iznos..." value={numValue} onChange={
-            (e)=>{    
-            setNumValue(e.target.value)    
-        }}/>
-
-
-    
-            {/* Dugme za dodavanje */}
-        <button className="add-btn" onClick={() => {
-            if(select === '+' && text !== ''){
-
-            let noviPrihod = {
-                //mora Math.max
-                id:Math.max(0,...prihodi.map(p => p.id)) + 1,
-                desc: text,
-                value: Number(numValue)
-            }
-
-            setPrihodi([...prihodi, noviPrihod])
-            setTxt('')
-            setNumValue('')
-
-            console.log(prihodi);
-        }
-            if(select === '-' && text !== ''){
-            let noviRashod = {
-                id:Math.max(0,...rashodi.map(r => r.id)) + 1,
-                desc: text,
-                value: Number(numValue)
-            }
-            // console.log(noviRashod.id);
-
-
-
-            setRashodi([...rashodi, noviRashod])
-            setTxt('')
-            setNumValue('')
-        }
-
-        }}>Add</button>
-       </div>
-      </div>
-
-
-
-
+				}}>Add</button>
+       		</div>
+      	</div>
     )
-
-
 }
-
 
 export default InputFields

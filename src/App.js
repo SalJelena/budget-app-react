@@ -23,19 +23,13 @@ const App = () => {
     }
   ])
 
-
   return (
     <>
       <Header prihodi={prihodi} rashodi={rashodi} />
-
       <InputFields prihodi={prihodi} setPrihodi={setPrihodi} rashodi={rashodi} setRashodi={setRashodi}/>
-
       <CalculationsLists prihodi={prihodi} setPrihodi={setPrihodi} rashodi={rashodi} setRashodi={setRashodi} />
     </>
   )
-
-
-
 }
 
 export default App;
