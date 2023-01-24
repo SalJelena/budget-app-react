@@ -12,8 +12,8 @@ const Header = ({prihodi, rashodi}) => {
     return (
         <div className="top-div">
             <div className="budget">
-            <p className="budget-naslov">Mesecni budzet u Septembru 2021:</p>
-            <p className="budget-vrednost-final">Preostali budzet: {preostaliBudzet}</p>
+            <p className="budget-naslov">Monthly budget in September 2021:</p>
+            <p className="budget-vrednost-final">Remaining budget: {preostaliBudzet}</p>
             <p className="budget-prihod">+ {ukupniPrihod} </p>
             <p className="budget-rashod">- {ukupniRashod} {ukupnoProcentiRashod}%</p>
             </div>

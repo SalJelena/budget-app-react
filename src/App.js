@@ -10,16 +10,16 @@ const App = () => {
   const [prihodi, setPrihodi] = useState([
     {
       id: 1,
-      desc: 'Plata',
-      value: 80000
+      desc: 'Salary',
+      value: 5000
     }
   ])
 
  const [rashodi, setRashodi] = useState([
     {
       id: 1,
-      desc: 'Racuni',
-      value: 6000
+      desc: 'Appartment rent',
+      value: 1900
     }
   ])
 

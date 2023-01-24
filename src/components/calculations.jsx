@@ -7,8 +7,8 @@ const CalculationsLists = ({prihodi, setPrihodi, rashodi, setRashodi}) => {
     return (
         <div className="container">
             <div className="prihod">
-                <h2>Prihodi:</h2>
-                <div className="item">{prihodi.map(prihod => <p key={prihod.id}>{prihod.desc} {prihod.value} <button onClick={()=>{
+                <h2>Incomes:</h2>
+                <div className="item">{prihodi.map(prihod => <p key={prihod.id}>{prihod.desc} {prihod.value} <button className='btn-delete' onClick={()=>{
                     setPrihodi((prev) => {
                         let kopija = [...prev]
                         let indeks = kopija.findIndex(el => el.id === prihod.id)
@@ -20,8 +20,8 @@ const CalculationsLists = ({prihodi, setPrihodi, rashodi, setRashodi}) => {
             </div>
 
             <div className="rashod">
-                <h2>Rashodi:</h2>
-                <div className="item">{rashodi.map(rashod => <p key={rashod.id}>{rashod.desc} {rashod.value} <span>{Math.round(rashod.value / sum * 100)}%</span><button onClick={()=>{
+                <h2>Expenditures:</h2>
+                <div className="item">{rashodi.map(rashod => <p key={rashod.id}>{rashod.desc} {rashod.value} <span>{Math.round(rashod.value / sum * 100)}%</span><button className='btn-delete' onClick={()=>{
                     setRashodi((prev) => {
                         let kopija = [...prev]
                         let indeks = kopija.findIndex(el => el.id === rashod.id)

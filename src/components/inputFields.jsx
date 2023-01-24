@@ -22,11 +22,11 @@ const InputFields = ({prihodi, setPrihodi, rashodi, setRashodi}) => {
                     {options.map(option => <option key={option} value={option}>{option}</option>)}
                 </select>
 
-				<input className="add-description" value={text} placeholder="Opis..." onChange={(e)=>{      
+				<input className="add-description" value={text} placeholder="Description..." onChange={(e)=>{      
 					setTxt(e.target.value)       
 				}}/>
 
-				<input type="number" className="add-value" placeholder="Iznos..." value={numValue} onChange={
+				<input type="number" className="add-value" placeholder="Value..." value={numValue} onChange={
 					(e)=>{    
 					setNumValue(e.target.value)    
 				}}/>
